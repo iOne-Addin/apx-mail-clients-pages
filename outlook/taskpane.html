@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="zh-TW">
-  <head>
+  <head><meta name="apx-build" content="03ae16b4454867b76a86e942036c96e8ef71c7df">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>APX.AI 安全傳送</title>
@@ -25,8 +25,8 @@
       integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+"
       crossorigin="anonymous"
     />
-    <script type="module" crossorigin src="../assets/taskpane-DClPqUSo.js"></script>
-    <link rel="modulepreload" crossorigin href="../assets/error-handler-Cs3kfgNV.js">
+    <script type="module" crossorigin src="../assets/taskpane-DNOj8iI3.js"></script>
+    <link rel="modulepreload" crossorigin href="../assets/error-handler-D7AGT1do.js">
     <link rel="stylesheet" crossorigin href="../assets/taskpane-Cbj0JW4P.css">
   </head>
 
@@ -82,6 +82,17 @@
           target="_blank"
           rel="noopener noreferrer"
           data-key="USER_GUIDE_LINK_TEXT"
+        ></a
+        ><!-- 這兩個 <a> 之間刻意用 "></a\n><a" 消除可視空白：正常寫法瀏覽器會把
+             換行/縮排摺成一個空格，讓 TUTORIAL_LINK_TEXT 的 zh-TW 值（"｜教學影片"，
+             無前導空白）前面多出「手冊 ｜」的空格，而 enUS 值（" | Tutorial"）
+             本身有前導空白，兩語系會不一致。href="#" 由 auth-handler.ts 的
+             bindTutorialLinks 在 runtime 換成 OUTLOOK_TUTORIAL_VIDEO_URL 實際值 --><a
+          id="tutorialLinkServer"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-key="TUTORIAL_LINK_TEXT"
         ></a>
       </p>
       <p class="small text-muted text-center" data-key="ENTERPRISE_NOTE"></p>
@@ -136,6 +147,15 @@
           target="_blank"
           rel="noopener noreferrer"
           data-key="USER_GUIDE_LINK_TEXT"
+        ></a
+        ><!-- 消除可視空白的原因見 serverInputView 同段註解（zh-TW 分隔符不能多空格）。
+             href="#" 由 auth-handler.ts 的 bindTutorialLinks 在 runtime 換成
+             OUTLOOK_TUTORIAL_VIDEO_URL 實際值 --><a
+          id="tutorialLinkLogin"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-key="TUTORIAL_LINK_TEXT"
         ></a>
       </p>
     </div>
